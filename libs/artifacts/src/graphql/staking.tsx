@@ -53,8 +53,8 @@ export type Account = {
   totalVotesAllBD: Scalars['MstableBigDecimal'];
   totalVotesBPT: Scalars['BigInt'];
   totalVotesBPTBD: Scalars['MstableBigDecimal'];
-  totalVotesMTA: Scalars['BigInt'];
-  totalVotesMTABD: Scalars['MstableBigDecimal'];
+  totalVotesFURY: Scalars['BigInt'];
+  totalVotesFURYBD: Scalars['MstableBigDecimal'];
 };
 
 
@@ -93,14 +93,14 @@ export type Account_Filter = {
   id_lte?: Maybe<Scalars['ID']>;
   id_in?: Maybe<Array<Scalars['ID']>>;
   id_not_in?: Maybe<Array<Scalars['ID']>>;
-  totalVotesMTA?: Maybe<Scalars['BigInt']>;
-  totalVotesMTA_not?: Maybe<Scalars['BigInt']>;
-  totalVotesMTA_gt?: Maybe<Scalars['BigInt']>;
-  totalVotesMTA_lt?: Maybe<Scalars['BigInt']>;
-  totalVotesMTA_gte?: Maybe<Scalars['BigInt']>;
-  totalVotesMTA_lte?: Maybe<Scalars['BigInt']>;
-  totalVotesMTA_in?: Maybe<Array<Scalars['BigInt']>>;
-  totalVotesMTA_not_in?: Maybe<Array<Scalars['BigInt']>>;
+  totalVotesFURY?: Maybe<Scalars['BigInt']>;
+  totalVotesFURY_not?: Maybe<Scalars['BigInt']>;
+  totalVotesFURY_gt?: Maybe<Scalars['BigInt']>;
+  totalVotesFURY_lt?: Maybe<Scalars['BigInt']>;
+  totalVotesFURY_gte?: Maybe<Scalars['BigInt']>;
+  totalVotesFURY_lte?: Maybe<Scalars['BigInt']>;
+  totalVotesFURY_in?: Maybe<Array<Scalars['BigInt']>>;
+  totalVotesFURY_not_in?: Maybe<Array<Scalars['BigInt']>>;
   totalVotesBPT?: Maybe<Scalars['BigInt']>;
   totalVotesBPT_not?: Maybe<Scalars['BigInt']>;
   totalVotesBPT_gt?: Maybe<Scalars['BigInt']>;
@@ -150,7 +150,7 @@ export type Account_Filter = {
 
 export enum Account_OrderBy {
   Id = 'id',
-  TotalVotesMta = 'totalVotesMTA',
+  TotalVotesFury = 'totalVotesFURY',
   TotalVotesBpt = 'totalVotesBPT',
   TotalVotesAll = 'totalVotesAll',
   LastAction = 'lastAction',
@@ -951,7 +951,7 @@ export type StakedToken = {
   slashingPercentage: Scalars['BigInt'];
   priceCoefficient?: Maybe<Scalars['BigInt']>;
   isStakedTokenBPT: Scalars['Boolean'];
-  isStakedTokenMTA: Scalars['Boolean'];
+  isStakedTokenFURY: Scalars['Boolean'];
   accounts: Array<StakedTokenAccount>;
 };
 
@@ -1385,10 +1385,10 @@ export type StakedToken_Filter = {
   isStakedTokenBPT_not?: Maybe<Scalars['Boolean']>;
   isStakedTokenBPT_in?: Maybe<Array<Scalars['Boolean']>>;
   isStakedTokenBPT_not_in?: Maybe<Array<Scalars['Boolean']>>;
-  isStakedTokenMTA?: Maybe<Scalars['Boolean']>;
-  isStakedTokenMTA_not?: Maybe<Scalars['Boolean']>;
-  isStakedTokenMTA_in?: Maybe<Array<Scalars['Boolean']>>;
-  isStakedTokenMTA_not_in?: Maybe<Array<Scalars['Boolean']>>;
+  isStakedTokenFURY?: Maybe<Scalars['Boolean']>;
+  isStakedTokenFURY_not?: Maybe<Scalars['Boolean']>;
+  isStakedTokenFURY_in?: Maybe<Array<Scalars['Boolean']>>;
+  isStakedTokenFURY_not_in?: Maybe<Array<Scalars['Boolean']>>;
   accounts_?: Maybe<StakedTokenAccount_Filter>;
   /** Filter for the block changed event. */
   _change_block?: Maybe<BlockChangedFilter>;
@@ -1406,7 +1406,7 @@ export enum StakedToken_OrderBy {
   SlashingPercentage = 'slashingPercentage',
   PriceCoefficient = 'priceCoefficient',
   IsStakedTokenBpt = 'isStakedTokenBPT',
-  IsStakedTokenMta = 'isStakedTokenMTA',
+  IsStakedTokenFury = 'isStakedTokenFURY',
   Accounts = 'accounts'
 }
 
@@ -2176,7 +2176,7 @@ export type AccountQueryVariables = Exact<{
 }>;
 
 
-export type AccountQuery = { account?: { id: string, lastAction: number, seasonMultiplier: number, permMultiplier: number, totalVotesAll: string, totalVotesMTA: string, totalVotesBPT: string, totalVotesBPTBD: BigDecimal, totalVotesMTABD: BigDecimal, totalVotesAllBD: BigDecimal, seasonMultiplierSimple: number, permMultiplierSimple: number, completedQuests: Array<{ id: string, completedAt: number, quest: { id: string } }>, delegators: Array<{ id: string }>, stakedTokenAccounts: Array<{ id: string, stakedToken: { id: string, stakingToken: { symbol: string } }, delegatee?: { id: string, totalVotesAll: string, totalVotesAllBD: BigDecimal } | null | undefined, balance: { id: string, raw: string, votes: string, timeMultiplier: number, questMultiplier: number, cooldownTimestamp: number, weightedTimestamp: number, cooldownUnits: string, rawBD: BigDecimal, votesBD: BigDecimal, timeMultiplierSimple: number, questMultiplierSimple: number, userPriceCoefficient: string } }> } | null | undefined };
+export type AccountQuery = { account?: { id: string, lastAction: number, seasonMultiplier: number, permMultiplier: number, totalVotesAll: string, totalVotesFURY: string, totalVotesBPT: string, totalVotesBPTBD: BigDecimal, totalVotesFURYBD: BigDecimal, totalVotesAllBD: BigDecimal, seasonMultiplierSimple: number, permMultiplierSimple: number, completedQuests: Array<{ id: string, completedAt: number, quest: { id: string } }>, delegators: Array<{ id: string }>, stakedTokenAccounts: Array<{ id: string, stakedToken: { id: string, stakingToken: { symbol: string } }, delegatee?: { id: string, totalVotesAll: string, totalVotesAllBD: BigDecimal } | null | undefined, balance: { id: string, raw: string, votes: string, timeMultiplier: number, questMultiplier: number, cooldownTimestamp: number, weightedTimestamp: number, cooldownUnits: string, rawBD: BigDecimal, votesBD: BigDecimal, timeMultiplierSimple: number, questMultiplierSimple: number, userPriceCoefficient: string } }> } | null | undefined };
 
 export type StakedTokenQueryVariables = Exact<{
   id: Scalars['ID'];
@@ -2358,10 +2358,10 @@ export const AccountDocument = gql`
     seasonMultiplier
     permMultiplier
     totalVotesAll
-    totalVotesMTA
+    totalVotesFURY
     totalVotesBPT
     totalVotesBPTBD @client
-    totalVotesMTABD @client
+    totalVotesFURYBD @client
     totalVotesAllBD @client
     seasonMultiplierSimple @client
     permMultiplierSimple @client

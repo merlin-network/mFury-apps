@@ -49,12 +49,12 @@ export const StakingStatusProvider: FC = ({ children }) => {
   useAsync(async () => {
     if (!signer || !account || !!lockedV1?.value) return
     setLockedV1.fetching()
-    const contract = IncentivisedVotingLockup__factory.connect(networkAddresses.vMTA, signer)
+    const contract = IncentivisedVotingLockup__factory.connect(networkAddresses.vFURY, signer)
     const data = await contract.locked(account)
     const balance = new BigDecimal(data?.amount ?? 0)
     const end = (data?.end?.toNumber() ?? 0) * 1e3
     setLockedV1.value({ balance, end })
-  }, [account, lockedV1, networkAddresses.vMTA, setLockedV1, signer])
+  }, [account, lockedV1, networkAddresses.vFURY, setLockedV1, signer])
 
   return providerFactory(
     dispatchContext,

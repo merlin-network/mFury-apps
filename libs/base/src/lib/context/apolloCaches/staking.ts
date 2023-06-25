@@ -29,7 +29,7 @@ const typePolicies: TypedTypePolicies = {
   Account: {
     fields: {
       totalVotesAllBD: readAsBD<Account>('totalVotesAll'),
-      totalVotesMTABD: readAsBD<Account>('totalVotesMTA'),
+      totalVotesFURYBD: readAsBD<Account>('totalVotesFURY'),
       totalVotesBPTBD: readAsBD<Account>('totalVotesBPT'),
       permMultiplierSimple: {
         read(existing, options) {

@@ -77,7 +77,7 @@ const getAssetUse = (symbol: string, type?: 'masset' | 'fasset' | 'basset'): { t
         },
         {
           title: 'Pools',
-          subtitle: 'Earn MTA rewards',
+          subtitle: 'Earn FURY rewards',
           href: `/${massetName}/pools`,
         },
       ]
@@ -86,15 +86,15 @@ const getAssetUse = (symbol: string, type?: 'masset' | 'fasset' | 'basset'): { t
       return [
         {
           title: `Save Vault (i${formattedName[massetName]} Vault)`,
-          subtitle: 'Earn MTA rewards',
+          subtitle: 'Earn FURY rewards',
           href: `/${massetName}/save`,
         },
       ]
-    case 'MTA':
+    case 'FURY':
       return [
         {
           title: 'mStable Governance',
-          subtitle: 'Stake MTA to vote in governance',
+          subtitle: 'Stake FURY to vote in governance',
           href: 'https://staking.mstable.app/',
         },
         {
@@ -112,7 +112,7 @@ const getAssetUse = (symbol: string, type?: 'masset' | 'fasset' | 'basset'): { t
         },
         {
           title: 'Pools',
-          subtitle: 'Earn MTA rewards',
+          subtitle: 'Earn FURY rewards',
           href: `/${massetName}/pools`,
         },
       ]

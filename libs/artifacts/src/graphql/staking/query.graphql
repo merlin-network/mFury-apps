@@ -33,10 +33,10 @@ query Account($id: ID!) {
     seasonMultiplier
     permMultiplier
     totalVotesAll
-    totalVotesMTA
+    totalVotesFURY
     totalVotesBPT
     totalVotesBPTBD @client
-    totalVotesMTABD @client
+    totalVotesFURYBD @client
     totalVotesAllBD @client
     seasonMultiplierSimple @client
     permMultiplierSimple @client

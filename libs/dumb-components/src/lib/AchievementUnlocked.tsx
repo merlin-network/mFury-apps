@@ -1,4 +1,4 @@
-import mtaImg from '@apps/icons/tokens/MTA.svg'
+import furyImg from '@apps/icons/tokens/FURY.svg'
 import styled, { css } from 'styled-components'
 
 import type { FC } from 'react'
@@ -112,7 +112,7 @@ export const AchievementUnlocked: FC<{ title: string; points?: number; className
   return (
     <Container isObjective={isObjective} onClick={onClick} className={className}>
       <div className="circle">
-        <img alt="Metanaut" src={isObjective ? mtaImg : '/assets/icons/astroboi.gif'} />
+        <img alt="Metanaut" src={isObjective ? furyImg : '/assets/icons/astroboi.gif'} />
       </div>
       <div className="banner">
         <div className="complete">{isObjective ? 'Quest Objective' : 'Quest'} Complete</div>

@@ -232,7 +232,7 @@ export const Meta8Logic: FC<{ isBooted: boolean }> = ({ isBooted }) => {
             <p>Meta-8 (c) 1991 mStable Entertainment Australia</p>
             <br />
             <p>Reticulating splines...</p>
-            <p>Aping into MTA...</p>
+            <p>Aping into FURY...</p>
             <p>Following @metaboi_...</p>
             <p>System startup complete.</p>
           </Typist>

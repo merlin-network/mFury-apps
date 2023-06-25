@@ -5,7 +5,7 @@ import ALCX, { ReactComponent as AlcxSvg } from '@apps/icons/tokens/ALCX.svg'
 import ALUSD, { ReactComponent as AlusdSvg } from '@apps/icons/tokens/alUSD.svg'
 import BADGER, { ReactComponent as BadgerSvg } from '@apps/icons/tokens/Badger.svg'
 import Balancer, { ReactComponent as BalancerSvg } from '@apps/icons/tokens/Balancer.svg'
-import BPTMTAETH, { ReactComponent as BptMtaEthSvg } from '@apps/icons/tokens/BPT-MTA-ETH.svg'
+import BPTFURYETH, { ReactComponent as BptFuryEthSvg } from '@apps/icons/tokens/BPT-FURY-ETH.svg'
 import BUSD, { ReactComponent as BusdSvg } from '@apps/icons/tokens/BUSD.svg'
 import CREAM, { ReactComponent as CreamSvg } from '@apps/icons/tokens/Cream.svg'
 import CRV, { ReactComponent as CrvSvg } from '@apps/icons/tokens/CRV.svg'
@@ -15,15 +15,15 @@ import FAKE, { ReactComponent as FakeSvg } from '@apps/icons/tokens/FAKE.svg'
 import FEI, { ReactComponent as FeiSvg } from '@apps/icons/tokens/FEI.svg'
 import FLX, { ReactComponent as FlxSvg } from '@apps/icons/tokens/FLX.svg'
 import FRAX, { ReactComponent as FraxSvg } from '@apps/icons/tokens/FRAX.svg'
+import FURY, { ReactComponent as FurySvg } from '@apps/icons/tokens/FURY.svg'
 import FXS, { ReactComponent as FxsSvg } from '@apps/icons/tokens/FXS.svg'
 import GUSD, { ReactComponent as GusdSvg } from '@apps/icons/tokens/GUSD.svg'
 import HBTC, { ReactComponent as HbtcSvg } from '@apps/icons/tokens/HBTC.svg'
 import IMBTC, { ReactComponent as ImbtcSvg } from '@apps/icons/tokens/imBTC.svg'
-import IMBTCMTA, { ReactComponent as ImbtcmtaSvg } from '@apps/icons/tokens/imbtc-mta.svg'
+import IMBTCFURY, { ReactComponent as ImbtcfurySvg } from '@apps/icons/tokens/imbtc-fury.svg'
 import IMUSD, { ReactComponent as ImusdSvg } from '@apps/icons/tokens/imUSD.svg'
-import IMUSDMTA, { ReactComponent as ImusdmtaSvg } from '@apps/icons/tokens/imusd-mta.svg'
+import IMUSDFURY, { ReactComponent as ImusdfurySvg } from '@apps/icons/tokens/imusd-fury.svg'
 import MBTC, { ReactComponent as MbtcSvg } from '@apps/icons/tokens/mBTC.svg'
-import MTA, { ReactComponent as MtaSvg } from '@apps/icons/tokens/MTA.svg'
 import MUSD, { ReactComponent as MusdSvg } from '@apps/icons/tokens/mUSD.svg'
 import MUSD3CRV, { ReactComponent as Musd3CrvSvg } from '@apps/icons/tokens/musd3CRV.svg'
 import RAI, { ReactComponent as RaiSvg } from '@apps/icons/tokens/RAI.svg'
@@ -37,7 +37,7 @@ import Uniswap, { ReactComponent as UniswapSvg } from '@apps/icons/tokens/Uniswa
 import USDC, { ReactComponent as UsdcSvg } from '@apps/icons/tokens/USDC.svg'
 import USDT, { ReactComponent as UsdtSvg } from '@apps/icons/tokens/USDT.svg'
 import VAULT, { ReactComponent as VaultSvg } from '@apps/icons/tokens/vault.svg'
-import VMTA, { ReactComponent as VmtaSvg } from '@apps/icons/tokens/vMTA.svg'
+import VFURY, { ReactComponent as VfurySvg } from '@apps/icons/tokens/vFURY.svg'
 import WBTC, { ReactComponent as WbtcSvg } from '@apps/icons/tokens/wBTC.svg'
 import styled from 'styled-components'
 
@@ -65,32 +65,32 @@ export const TOKEN_ICONS: Record<string, string> = {
   USDC,
   DAI,
   BUSD,
-  MTA,
+  FURY,
   SUSD,
   CRV,
   '3POOL': Curve3Pool,
   MUSD3CRV,
   'UNI-V2': Uniswap,
   BAL: Balancer,
-  BPT: BPTMTAETH,
-  MBPT: BPTMTAETH,
-  TMBPT: BPTMTAETH,
-  'MK-MTA': MTA,
+  BPT: BPTFURYETH,
+  MBPT: BPTFURYETH,
+  TMBPT: BPTFURYETH,
+  'MK-FURY': FURY,
   'MK-BAL': Balancer,
   IMUSD,
   'V-IMUSD': VAULT,
-  VMTA,
+  VFURY,
   RENBTC,
   WBTC,
   SBTC,
   IMBTC,
   'V-IMBTC': VAULT,
-  IMUSDMTA,
+  IMUSDFURY,
   SUSHI: Sushi,
   SLP: Sushi,
   BADGER,
   CREAM,
-  IMBTCMTA,
+  IMBTCFURY,
   FAST: FAKE,
   GUSD,
   HBTC,
@@ -127,25 +127,25 @@ const SVG_ICONS: Record<string, SvgComponent> = {
   CRV: CrvSvg as SvgComponent,
   '3POOL': Curve3PoolSvg as SvgComponent,
   MUSD3CRV: Musd3CrvSvg as SvgComponent,
-  MTA: MtaSvg as SvgComponent,
+  FURY: FurySvg as SvgComponent,
   'UNI-V2': UniswapSvg as SvgComponent,
   BAL: BalancerSvg as SvgComponent,
-  BPT: BptMtaEthSvg as SvgComponent,
-  'MK-MTA': MtaSvg as SvgComponent,
+  BPT: BptFuryEthSvg as SvgComponent,
+  'MK-FURY': FurySvg as SvgComponent,
   'MK-BAL': BalancerSvg as SvgComponent,
   IMUSD: ImusdSvg as SvgComponent,
   'V-IMUSD': ImusdSvg as SvgComponent,
-  VMTA: VmtaSvg as SvgComponent,
+  VFURY: VfurySvg as SvgComponent,
   RENBTC: RenbtcSvg as SvgComponent,
   WBTC: WbtcSvg as SvgComponent,
   SBTC: SbtcSvg as SvgComponent,
   IMBTC: ImbtcSvg as SvgComponent,
-  IMUSDMTA: ImusdmtaSvg as SvgComponent,
+  IMUSDFURY: ImusdfurySvg as SvgComponent,
   SUSHI: SushiSvg as SvgComponent,
   SLP: SushiSvg as SvgComponent,
   BADGER: BadgerSvg as SvgComponent,
   CREAM: CreamSvg as SvgComponent,
-  IMBTCMTA: ImbtcmtaSvg as SvgComponent,
+  IMBTCFURY: ImbtcfurySvg as SvgComponent,
   FAST: FakeSvg as SvgComponent,
   GUSD: GusdSvg as SvgComponent,
   HBTC: HbtcSvg as SvgComponent,

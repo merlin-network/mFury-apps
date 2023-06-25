@@ -117,7 +117,7 @@ const DelegateeBalances: FC<{
           </Fragment>
         )
       })}
-      <BalanceWidget title="Voting Power" token="vMTA" balance={votingPower} />
+      <BalanceWidget title="Voting Power" token="vFURY" balance={votingPower} />
     </DelegateeBalancesContainer>
   )
 }

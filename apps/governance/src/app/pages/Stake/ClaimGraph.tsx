@@ -9,7 +9,7 @@ import { useRewardsEarned } from './context'
 import type { FC } from 'react'
 
 interface DataType {
-  mta: number
+  fury: number
   ordering: number
 }
 
@@ -34,11 +34,11 @@ export const ClaimGraph: FC = () => {
   const data = useMemo<DataType[]>(() => {
     return [
       {
-        mta: 0,
+        fury: 0,
         ordering: 0,
       },
       {
-        mta: rewardsEarned?.rewards ?? 0,
+        fury: rewardsEarned?.rewards ?? 0,
         ordering: 1,
       },
     ]
@@ -66,7 +66,7 @@ export const ClaimGraph: FC = () => {
             cursor
             label=""
             labelFormatter={w => (w === 0 ? 'Last claim' : 'Available to claim')}
-            formatter={mta => `${(mta as number).toFixed(2)} MTA`}
+            formatter={fury => `${(fury as number).toFixed(2)} FURY`}
             separator=""
             contentStyle={{
               fontSize: '14px',
@@ -82,7 +82,7 @@ export const ClaimGraph: FC = () => {
               left: 0,
             }}
           />
-          <Area type="monotone" name={'Earned: '} dataKey="mta" stroke={Color.blue} strokeWidth={2} fill="url(#area)" />
+          <Area type="monotone" name={'Earned: '} dataKey="fury" stroke={Color.blue} strokeWidth={2} fill="url(#area)" />
         </AreaChart>
       </ResponsiveContainer>
     </Container>

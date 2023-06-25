@@ -1,8 +1,8 @@
 import { useNetworkAddresses } from '@apps/base/context/network'
 import { Button, Tooltip } from '@apps/dumb-components'
 import { ReactComponent as CheckmarkIcon } from '@apps/icons/checkmark.svg'
-import { ReactComponent as BPTIcon } from '@apps/icons/tokens/BPT-MTA-ETH.svg'
-import { ReactComponent as MTAIcon } from '@apps/icons/tokens/MTA.svg'
+import { ReactComponent as BPTIcon } from '@apps/icons/tokens/BPT-FURY-ETH.svg'
+import { ReactComponent as FURYIcon } from '@apps/icons/tokens/FURY.svg'
 import { ViewportWidth } from '@apps/theme'
 import styled, { css } from 'styled-components'
 
@@ -12,7 +12,7 @@ import { useStakingStatusDispatch } from '../../context/StakingStatus'
 import type { FC } from 'react'
 
 enum Selection {
-  MTA,
+  FURY,
   BPT,
 }
 
@@ -21,7 +21,7 @@ const IconContainer = css`
   justify-content: flex-end;
 `
 
-const MTAContainer = styled.div`
+const FURYContainer = styled.div`
   ${IconContainer};
   width: 12rem;
 
@@ -106,7 +106,7 @@ const SelectionBox = styled.div`
   gap: 2rem;
 `
 
-const MTASelectionBox = styled(SelectionBox)`
+const FURYSelectionBox = styled(SelectionBox)`
   border: 1px solid ${({ theme }) => theme.color.primaryTransparent};
 `
 
@@ -169,57 +169,57 @@ export const StakeSelection: FC = () => {
   const { options } = useStakedToken()
   const setStakedToken = useSetStakedToken()
   const { setSelectedOption } = useStakingStatusDispatch()
-  const stkMtaAddress = useNetworkAddresses()?.stkMTA
+  const stkFuryAddress = useNetworkAddresses()?.stkFURY
 
   const handleSelection = (selection: Selection) => {
     const tokens = Object.keys(options)
       .map(key => key)
-      .sort(a => (a === stkMtaAddress ? -1 : 1))
-    setStakedToken(tokens[selection === Selection.MTA ? 0 : 1])
+      .sort(a => (a === stkFuryAddress ? -1 : 1))
+    setStakedToken(tokens[selection === Selection.FURY ? 0 : 1])
     setSelectedOption()
   }
 
   return (
     <Container>
-      <MTASelectionBox>
+      <FURYSelectionBox>
         <RecommendedBox>
           <div>
-            <Tooltip tip="MTA is the preferred staking choice as the transaction cost is cheaper and less complex" hideIcon>
+            <Tooltip tip="FURY is the preferred staking choice as the transaction cost is cheaper and less complex" hideIcon>
               Recommended
             </Tooltip>
           </div>
         </RecommendedBox>
         <Header>
           <div>
-            <h2>Stake MTA</h2>
+            <h2>Stake FURY</h2>
             <h4>
-              In return for participating in governance, you will receive MTA rewards.{' '}
-              <a href="https://docs.mstable.org/using-mstable/mta-staking/staking-v2" target="_blank" rel="noopener noreferrer">
+              In return for participating in governance, you will receive FURY rewards.{' '}
+              <a href="https://docs.mstable.org/using-mstable/fury-staking/staking-v2" target="_blank" rel="noopener noreferrer">
                 Learn about the risks
               </a>
             </h4>
           </div>
-          <MTAContainer>
-            <MTAIcon />
-          </MTAContainer>
+          <FURYContainer>
+            <FURYIcon />
+          </FURYContainer>
         </Header>
         <Checklist>
           <div>
             <CheckmarkIcon />
           </div>
-          MTA Rewards
+          FURY Rewards
         </Checklist>
-        <Button highlighted scale={1.125} onClick={() => handleSelection(Selection.MTA)}>
-          Stake MTA
+        <Button highlighted scale={1.125} onClick={() => handleSelection(Selection.FURY)}>
+          Stake FURY
         </Button>
-      </MTASelectionBox>
+      </FURYSelectionBox>
       <SelectionBox>
         <Header>
           <div>
-            <h2>Stake MTA/ETH BPT</h2>
+            <h2>Stake FURY/ETH BPT</h2>
             <h4>
-              In return for participating in governance, you will receive MTA, BAL rewards and trading fees.{' '}
-              <a href="https://docs.mstable.org/using-mstable/mta-staking/staking-v2" target="_blank" rel="noopener noreferrer">
+              In return for participating in governance, you will receive FURY, BAL rewards and trading fees.{' '}
+              <a href="https://docs.mstable.org/using-mstable/fury-staking/staking-v2" target="_blank" rel="noopener noreferrer">
                 Learn about the risks
               </a>
             </h4>
@@ -232,7 +232,7 @@ export const StakeSelection: FC = () => {
           <div>
             <CheckmarkIcon />
           </div>
-          MTA Rewards, BAL Rewards, Trading Fees
+          FURY Rewards, BAL Rewards, Trading Fees
         </Checklist>
         <Button highlighted scale={1.125} onClick={() => handleSelection(Selection.BPT)}>
           Stake BPT

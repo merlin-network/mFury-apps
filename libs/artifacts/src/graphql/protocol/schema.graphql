@@ -698,7 +698,7 @@ type BoostedSavingsVault {
   """
   rewardRate: BigInt!
   """
-  The rewards token, e.g. MTA
+  The rewards token, e.g. FURY
   
   """
   rewardsToken: Token!

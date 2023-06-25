@@ -146,7 +146,7 @@ _Released 20.08.20 19.02 CEST_
 
 Bug fixes:
 
-- Show that BAL rewards will be received for the Balancer MTA/mUSD 95/5 pool
+- Show that BAL rewards will be received for the Balancer FURY/mUSD 95/5 pool
 
 Miscellaneous:
 

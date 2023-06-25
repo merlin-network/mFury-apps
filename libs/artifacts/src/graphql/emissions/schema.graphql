@@ -289,7 +289,7 @@ type EmissionsController {
   id: ID!
   address: Bytes!
   """
-  Address of rewards token. i.e. MTA token
+  Address of rewards token. i.e. FURY token
   
   """
   rewardToken: Token!

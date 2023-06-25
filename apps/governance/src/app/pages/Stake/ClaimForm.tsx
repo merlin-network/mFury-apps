@@ -41,7 +41,7 @@ const StyledMultiRewards = styled(MultiRewards)`
 
 const ClaimFormRewards: FC = () => {
   const rewardsEarned = useRewardsEarned()
-  return <StyledMultiRewards rewardsEarned={{ rewards: [{ earned: BigDecimal.fromSimple(rewardsEarned?.rewards ?? 0), token: 'MTA' }] }} />
+  return <StyledMultiRewards rewardsEarned={{ rewards: [{ earned: BigDecimal.fromSimple(rewardsEarned?.rewards ?? 0), token: 'FURY' }] }} />
 }
 
 const MerkleDropBAL: FC = () => {
@@ -100,13 +100,13 @@ export const ClaimForm: FC = () => {
   return (
     <Container>
       <ClaimFormRewards />
-      {stakedTokenSymbol === 'MTA' ? (
+      {stakedTokenSymbol === 'FURY' ? (
         <Compound>
           <div>
             <h3>Compound rewards?</h3>
             <ToggleInput onClick={toggleIsCompounding} checked={isCompounding} />
           </div>
-          <p>This will claim and re-stake your earned MTA in 1 transaction</p>
+          <p>This will claim and re-stake your earned FURY in 1 transaction</p>
         </Compound>
       ) : (
         <MerkleDropBAL />

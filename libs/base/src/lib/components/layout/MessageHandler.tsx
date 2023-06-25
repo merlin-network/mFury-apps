@@ -67,7 +67,7 @@ export const MessageHandler: Props = {
         >
           Olympus Pro
         </a>{' '}
-        to offer MTA bonds.{' '}
+        to offer FURY bonds.{' '}
         <a
           href="https://medium.com/mstable/mstable-olympus-pro-treasury-bond-program-for-mstables-expansion-c2e6265e4fa9"
           target="_blank"
@@ -102,7 +102,7 @@ export const MessageHandler: Props = {
             the contracts since value accrual has been disabled.
           </p>
           <p>
-            All products, except for mUSD on Ethereum mainnet and Polygon, are being sunset. Staking MTA and governance has been disabled,
+            All products, except for mUSD on Ethereum mainnet and Polygon, are being sunset. Staking FURY and governance has been disabled,
             and staked assets are unlocked. Use the withdrawal app to access remaining funds.
           </p>
           <a

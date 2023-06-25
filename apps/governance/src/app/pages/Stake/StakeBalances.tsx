@@ -16,7 +16,7 @@ import { useRewardsEarned } from './context'
 import type { FC } from 'react'
 
 const BALANCER_URL = 'https://app.balancer.fi/#/pool/0xe2469f47ab58cf9cf59f9822e3c5de4950a41c49000200000000000000000089'
-const MTA_URL = 'https://cowswap.exchange/#/swap?outputCurrency=0xa3bed4e1c75d00fa6f4e5e6922db7261b5e9acd2'
+const FURY_URL = 'https://cowswap.exchange/#/swap?outputCurrency=0xa3bed4e1c75d00fa6f4e5e6922db7261b5e9acd2'
 
 interface Balance {
   symbol?: string
@@ -136,10 +136,10 @@ const InfoContainer = styled.div`
 `
 
 const Info: FC<{ isBPT?: boolean }> = ({ isBPT = false }) => {
-  const subtitle = isBPT ? 'Provide Liquidity' : 'Purchase MTA'
-  const title = isBPT ? 'MTA/ETH BPT' : 'MTA'
-  const buttonTitle = isBPT ? 'Balancer' : 'Buy MTA'
-  const link = isBPT ? BALANCER_URL : MTA_URL
+  const subtitle = isBPT ? 'Provide Liquidity' : 'Purchase FURY'
+  const title = isBPT ? 'FURY/ETH BPT' : 'FURY'
+  const buttonTitle = isBPT ? 'Balancer' : 'Buy FURY'
+  const link = isBPT ? BALANCER_URL : FURY_URL
   return (
     <InfoContainer>
       <div>
@@ -279,7 +279,7 @@ export const StakeBalances: FC = () => {
 
     return {
       stake: { amount: rawBD.simple + cooldown, symbol: data.stakedToken.stakingToken.symbol },
-      votingPower: { amount: stakedToken?.balance?.simple, symbol: 'vMTA' },
+      votingPower: { amount: stakedToken?.balance?.simple, symbol: 'vFURY' },
       rewardsEarned: { decimals: 2, symbol: data.stakedToken.stakingRewards.rewardsToken.symbol, amount: rewardsEarned.rewards },
       baseRewardsApy: { suffix: '%', amount: baseRewardsApy },
       userRewardsApy: { suffix: '%', amount: userRewardsApy },
@@ -304,7 +304,7 @@ export const StakeBalances: FC = () => {
           {stakedToken?.symbol === 'stkBPT' && balAPY && (
             <Group label="BAL APY" balance={{ amount: balAPY?.value, suffix: '%' }} loading={loading} />
           )}
-          <Group label="MTA APY" balance={values.userRewardsApy ? values.userRewardsApy : values.baseRewardsApy} loading={loading} />
+          <Group label="FURY APY" balance={values.userRewardsApy ? values.userRewardsApy : values.baseRewardsApy} loading={loading} />
         </DefaultWidget>
       ) : (
         <InfoWidget>

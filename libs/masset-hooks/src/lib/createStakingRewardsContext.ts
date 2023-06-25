@@ -214,7 +214,7 @@ export const createStakingRewardsContext = (): Readonly<
     const stakingToken = useTokenSubscription(stakingRewardsContract?.stakingToken.address)
     // TODO find price of wrapped token on main chain rather than hardcode these:
     const tokenPrices = fetchPrices(['0xa3bed4e1c75d00fa6f4e5e6922db7261b5e9acd2', '0x7d1afa7b718fb893db30a3abc0cfc608aacfebb0'])
-    const rewardsPrice = tokenPrices['0xa3bed4e1c75d00fa6f4e5e6922db7261b5e9acd2'] // MTA (Eth mainnet)
+    const rewardsPrice = tokenPrices['0xa3bed4e1c75d00fa6f4e5e6922db7261b5e9acd2'] // FURY (Eth mainnet)
     const platformRewardsPrice = tokenPrices['0x7d1afa7b718fb893db30a3abc0cfc608aacfebb0'] // MATIC (Eth mainnet)
 
     // 4. Transform all into StakingRewardsExtended

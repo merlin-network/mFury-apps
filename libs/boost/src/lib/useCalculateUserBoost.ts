@@ -2,12 +2,12 @@
 import { useMemo } from 'react'
 
 import { calculateBoost, getPriceCoeff } from './boost'
-import { useVMTABalance } from './useVMTABalance'
+import { useVFURYBalance } from './useVFURYBalance'
 
 import type { BoostedVaultState } from '@apps/data-provider'
 
 export const useCalculateUserBoost = (vault?: BoostedVaultState): number => {
-  const vMTABalance = useVMTABalance()
+  const vFURYBalance = useVFURYBalance()
   const rawBalance = vault?.account?.rawBalance
 
   const boost = useMemo<number>(() => {
@@ -15,8 +15,8 @@ export const useCalculateUserBoost = (vault?: BoostedVaultState): number => {
 
     const priceCoeff = getPriceCoeff(vault)
 
-    return calculateBoost(priceCoeff, rawBalance, vMTABalance)
-  }, [rawBalance, vMTABalance, vault])
+    return calculateBoost(priceCoeff, rawBalance, vFURYBalance)
+  }, [rawBalance, vFURYBalance, vault])
 
   // Fallback to 1x multiplier
   return boost ?? 1

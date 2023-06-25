@@ -1,6 +1,6 @@
 import { useNetworkAddresses } from '@apps/base/context/network'
 import { useFetchPriceCtx } from '@apps/base/context/prices'
-import { calculateBoost, getPriceCoeff, MAX_BOOST, useVMTABalance } from '@apps/boost'
+import { calculateBoost, getPriceCoeff, MAX_BOOST, useVFURYBalance } from '@apps/boost'
 import { useSelectedMassetState } from '@apps/masset-hooks'
 import { calculateApy } from '@apps/quick-maths'
 
@@ -14,7 +14,7 @@ const useFeederPoolApyVault = (poolAddress: string, mAssetName?: MassetName) => 
   const massetState = useSelectedMassetState(mAssetName)
   const massetPrice = useSelectedMassetPrice(mAssetName)
   const { fetchPrices } = useFetchPriceCtx()
-  const vMTABalance = useVMTABalance()
+  const vFURYBalance = useVFURYBalance()
 
   const pool = massetState?.feederPools[poolAddress]
   const vault = pool?.vault
@@ -47,8 +47,8 @@ const useFeederPoolApyVault = (poolAddress: string, mAssetName?: MassetName) => 
   let userBoost = baseRewards
 
   const priceCoeff = getPriceCoeff(vault)
-  if (vault.account && vMTABalance && priceCoeff) {
-    const boost = calculateBoost(priceCoeff, vault.account.rawBalance, vMTABalance)
+  if (vault.account && vFURYBalance && priceCoeff) {
+    const boost = calculateBoost(priceCoeff, vault.account.rawBalance, vFURYBalance)
 
     if (boost) {
       const boostedRewardRate = rewardRateSimple * boost

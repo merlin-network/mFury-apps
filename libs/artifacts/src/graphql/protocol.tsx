@@ -634,7 +634,7 @@ export type BoostedSavingsVault = {
   rewardPerTokenStored: Scalars['BigInt'];
   /** The reward rate for the rest of the rewards period */
   rewardRate: Scalars['BigInt'];
-  /** The rewards token, e.g. MTA */
+  /** The rewards token, e.g. FURY */
   rewardsToken: Token;
   /** Rewards distributor contract address */
   rewardsDistributor: Scalars['Bytes'];

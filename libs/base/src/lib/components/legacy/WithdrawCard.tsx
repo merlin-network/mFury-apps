@@ -9,7 +9,7 @@ import { useAccount, useContractReads, useSigner } from 'wagmi'
 
 import { usePropose } from '../../context/TransactionsProvider'
 import { Address, TokenIconSvg } from '../core'
-import { BalancerPoolTokenABI, StakingABI, UniswapStakedContractABI, vmtaABI } from './constants'
+import { BalancerPoolTokenABI, StakingABI, UniswapStakedContractABI, vfuryABI } from './constants'
 import { getColor, getTokenIcon } from './utils'
 
 import type { Interfaces } from '@apps/types'
@@ -77,8 +77,8 @@ export const WithdrawCard = ({ contract: { address, poolType, info, name } }: Wi
       { addressOrName: address, contractInterface: StakingABI, functionName: 'stakingToken' },
       {
         addressOrName: address,
-        contractInterface: poolType === 'vmta' ? vmtaABI : StakingABI,
-        functionName: poolType === 'vmta' ? 'staticBalanceOf' : 'balanceOf',
+        contractInterface: poolType === 'vfury' ? vfuryABI : StakingABI,
+        functionName: poolType === 'vfury' ? 'staticBalanceOf' : 'balanceOf',
         args: [account],
       },
     ],
@@ -133,7 +133,7 @@ export const WithdrawCard = ({ contract: { address, poolType, info, name } }: Wi
       </Header>
       <Content>{info}</Content>
 
-      {poolType === 'vmta' ? (
+      {poolType === 'vfury' ? (
         <StyledButton
           highlighted
           onClick={() => {

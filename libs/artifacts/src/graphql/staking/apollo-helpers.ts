@@ -1,5 +1,5 @@
 import { FieldPolicy, FieldReadFunction, TypePolicies, TypePolicy } from '@apollo/client/cache';
-export type AccountKeySpecifier = ('completedQuests' | 'delegators' | 'id' | 'lastAction' | 'permMultiplier' | 'permMultiplierSimple' | 'seasonMultiplier' | 'seasonMultiplierSimple' | 'stakedTokenAccounts' | 'totalVotesAll' | 'totalVotesAllBD' | 'totalVotesBPT' | 'totalVotesBPTBD' | 'totalVotesMTA' | 'totalVotesMTABD' | AccountKeySpecifier)[];
+export type AccountKeySpecifier = ('completedQuests' | 'delegators' | 'id' | 'lastAction' | 'permMultiplier' | 'permMultiplierSimple' | 'seasonMultiplier' | 'seasonMultiplierSimple' | 'stakedTokenAccounts' | 'totalVotesAll' | 'totalVotesAllBD' | 'totalVotesBPT' | 'totalVotesBPTBD' | 'totalVotesFURY' | 'totalVotesFURYBD' | AccountKeySpecifier)[];
 export type AccountFieldPolicy = {
 	completedQuests?: FieldPolicy<any> | FieldReadFunction<any>,
 	delegators?: FieldPolicy<any> | FieldReadFunction<any>,
@@ -14,8 +14,8 @@ export type AccountFieldPolicy = {
 	totalVotesAllBD?: FieldPolicy<any> | FieldReadFunction<any>,
 	totalVotesBPT?: FieldPolicy<any> | FieldReadFunction<any>,
 	totalVotesBPTBD?: FieldPolicy<any> | FieldReadFunction<any>,
-	totalVotesMTA?: FieldPolicy<any> | FieldReadFunction<any>,
-	totalVotesMTABD?: FieldPolicy<any> | FieldReadFunction<any>
+	totalVotesFURY?: FieldPolicy<any> | FieldReadFunction<any>,
+	totalVotesFURYBD?: FieldPolicy<any> | FieldReadFunction<any>
 };
 export type CompletedQuestKeySpecifier = ('id' | 'account' | 'quest' | 'completedAt' | CompletedQuestKeySpecifier)[];
 export type CompletedQuestFieldPolicy = {
@@ -103,7 +103,7 @@ export type SeasonFieldPolicy = {
 	endedAt?: FieldPolicy<any> | FieldReadFunction<any>,
 	quests?: FieldPolicy<any> | FieldReadFunction<any>
 };
-export type StakedTokenKeySpecifier = ('id' | 'token' | 'stakingToken' | 'stakingRewards' | 'questManager' | 'COOLDOWN_SECONDS' | 'UNSTAKE_WINDOW' | 'collateralisationRatio' | 'slashingPercentage' | 'priceCoefficient' | 'isStakedTokenBPT' | 'isStakedTokenMTA' | 'accounts' | StakedTokenKeySpecifier)[];
+export type StakedTokenKeySpecifier = ('id' | 'token' | 'stakingToken' | 'stakingRewards' | 'questManager' | 'COOLDOWN_SECONDS' | 'UNSTAKE_WINDOW' | 'collateralisationRatio' | 'slashingPercentage' | 'priceCoefficient' | 'isStakedTokenBPT' | 'isStakedTokenFURY' | 'accounts' | StakedTokenKeySpecifier)[];
 export type StakedTokenFieldPolicy = {
 	id?: FieldPolicy<any> | FieldReadFunction<any>,
 	token?: FieldPolicy<any> | FieldReadFunction<any>,
@@ -116,7 +116,7 @@ export type StakedTokenFieldPolicy = {
 	slashingPercentage?: FieldPolicy<any> | FieldReadFunction<any>,
 	priceCoefficient?: FieldPolicy<any> | FieldReadFunction<any>,
 	isStakedTokenBPT?: FieldPolicy<any> | FieldReadFunction<any>,
-	isStakedTokenMTA?: FieldPolicy<any> | FieldReadFunction<any>,
+	isStakedTokenFURY?: FieldPolicy<any> | FieldReadFunction<any>,
 	accounts?: FieldPolicy<any> | FieldReadFunction<any>
 };
 export type StakedTokenAccountKeySpecifier = ('id' | 'account' | 'stakedToken' | 'balance' | 'delegatee' | 'rewardPerTokenPaid' | 'rewards' | StakedTokenAccountKeySpecifier)[];

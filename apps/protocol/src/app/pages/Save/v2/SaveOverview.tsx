@@ -223,7 +223,7 @@ export const SaveOverview: FC = () => {
                       {apy.value?.rewards.maxBoost ? <>&nbsp;-&nbsp;</> : null}
                       {apy.value?.rewards.maxBoost ? <CountUp end={apy.value?.rewards.maxBoost ?? 0} suffix="%" /> : null}
                       <Tooltip
-                        tip={`Deposits to the Vault earn interest in addition to MTA rewards. Combined APY: ${combinedBaseApy.toFixed(2)}${
+                        tip={`Deposits to the Vault earn interest in addition to FURY rewards. Combined APY: ${combinedBaseApy.toFixed(2)}${
                           combinedBaseApy === combinedMaxApy ? '%' : `-${combinedMaxApy.toFixed(2)}%`
                         }`}
                       />
@@ -237,8 +237,8 @@ export const SaveOverview: FC = () => {
             <Button active={selection === Rewards} onClick={() => handleSelection(Rewards)}>
               <h3>Rewards</h3>
               <div>
-                <CountUp end={rewardStreams?.amounts?.total} suffix=" MTA" />
-                <Tooltip tip="MTA rewards unlock over time" />
+                <CountUp end={rewardStreams?.amounts?.total} suffix=" FURY" />
+                <Tooltip tip="FURY rewards unlock over time" />
               </div>
             </Button>
           )}

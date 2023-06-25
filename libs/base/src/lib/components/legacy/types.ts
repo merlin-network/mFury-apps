@@ -1,4 +1,4 @@
-export type LegacyPoolType = 'uni' | 'bal' | 'vmta'
+export type LegacyPoolType = 'uni' | 'bal' | 'vfury'
 
 export type LegacyContract = {
   address: string

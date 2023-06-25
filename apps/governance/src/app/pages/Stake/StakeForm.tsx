@@ -107,7 +107,7 @@ export const StakeForm: FC<Props> = ({ className, isMigrating = false }) => {
     if (!signer || !data || !balanceV1?.simple) return
 
     propose<Interfaces.IncentivisedVotingLockup, 'exit'>(
-      new TransactionManifest(IncentivisedVotingLockup__factory.connect(networkAddresses.vMTA, signer), 'exit', [], {
+      new TransactionManifest(IncentivisedVotingLockup__factory.connect(networkAddresses.vFURY, signer), 'exit', [], {
         present: `Withdrawing from Staking V1`,
         past: `Withdrew from Staking V1`,
       }),
@@ -164,7 +164,7 @@ export const StakeForm: FC<Props> = ({ className, isMigrating = false }) => {
       {!!balanceV2?.simple && <TimeMultiplierImpact isStaking stakeDelta={amount?.exact} />}
       <Warnings>
         {stakedInOtherToken && (
-          <Warning highlight>It is generally not advisable to stake in both MTA and BPT because of increased gas costs.</Warning>
+          <Warning highlight>It is generally not advisable to stake in both FURY and BPT because of increased gas costs.</Warning>
         )}
         <Warning>
           Unstaking is subject to a cooldown period of {cooldown} days, followed by a {unstakeWindow} day withdrawable period.
@@ -172,7 +172,7 @@ export const StakeForm: FC<Props> = ({ className, isMigrating = false }) => {
         <Warning>A redemption fee applies to all withdrawals. The longer you stake, the lower the redemption fee.</Warning>
         <Warning>
           In the event that the mStable protocol requires recollateralisation, you risk getting diluted{' '}
-          <a href="https://docs.mstable.org/using-mstable/mta-staking/staking-v2" target="_blank" rel="noopener noreferrer">
+          <a href="https://docs.mstable.org/using-mstable/fury-staking/staking-v2" target="_blank" rel="noopener noreferrer">
             Learn More
           </a>
         </Warning>

@@ -3,7 +3,7 @@ import { useMemo } from 'react'
 import { AssetInput } from '@apps/base/components/forms'
 import { useTokenSubscription } from '@apps/base/context/tokens'
 import { BigDecimal } from '@apps/bigdecimal'
-import { calculateBoost, calculateVMTAForMaxBoost, getPriceCoeff, useVMTABalance } from '@apps/boost'
+import { calculateBoost, calculateVFURYForMaxBoost, getPriceCoeff, useVFURYBalance } from '@apps/boost'
 import { DifferentialCountup } from '@apps/dumb-components'
 import { Button, InfoMessage, Widget } from '@apps/dumb-components'
 import { useBigDecimalInput } from '@apps/hooks'
@@ -198,28 +198,28 @@ export const BoostCalculator: FC<{
     stakingToken: { address: inputAddress },
     isImusd,
   } = vault
-  const vMTABalance = useVMTABalance()
+  const vFURYBalance = useVFURYBalance()
 
   const inputToken = useTokenSubscription(inputAddress)
   const inputBalance = inputToken?.balance
 
   const defaultInputValue = isImusd ? BigDecimal.fromSimple(100) : BigDecimal.ONE
 
-  const [vMTAValue, vMTAFormValue, setVmta] = useBigDecimalInput(vMTABalance)
+  const [vFURYValue, vFURYFormValue, setVfury] = useBigDecimalInput(vFURYBalance)
   const [inputValue, inputFormValue, setInput] = useBigDecimalInput(inputBalance?.simpleRounded !== 0 ? inputBalance : defaultInputValue)
 
   const boost = useMemo(() => {
     const priceCoeff = getPriceCoeff(vault)
     return {
-      fromBalance: calculateBoost(priceCoeff, inputBalance, vMTABalance),
-      fromInputs: calculateBoost(priceCoeff, inputValue, vMTAValue),
+      fromBalance: calculateBoost(priceCoeff, inputBalance, vFURYBalance),
+      fromInputs: calculateBoost(priceCoeff, inputValue, vFURYValue),
     }
-  }, [inputBalance, vMTABalance, vault, inputValue, vMTAValue])
+  }, [inputBalance, vFURYBalance, vault, inputValue, vFURYValue])
 
   return (
     <Container
       title="Earning Power Calculator"
-      tooltip="Calculate your optimal MTA rewards multiplier"
+      tooltip="Calculate your optimal FURY rewards multiplier"
       headerContent={
         noBackButton ? null : (
           <Button scale={0.7} onClick={onClick}>
@@ -229,23 +229,23 @@ export const BoostCalculator: FC<{
       }
     >
       <InfoMessage>
-        <span>Use the calculator below to find your optimal MTA rewards multiplier</span>
+        <span>Use the calculator below to find your optimal FURY rewards multiplier</span>
       </InfoMessage>
       <div>
         <CalculatorInputs>
           <AssetInput
             addressOptions={[
               {
-                address: 'vmta',
-                balance: vMTABalance,
-                symbol: 'vMTA',
+                address: 'vfury',
+                balance: vFURYBalance,
+                symbol: 'vFURY',
                 custom: true,
               },
             ]}
-            address={'vmta'}
+            address={'vfury'}
             addressDisabled
-            formValue={vMTAFormValue}
-            handleSetAmount={setVmta}
+            formValue={vFURYFormValue}
+            handleSetAmount={setVfury}
           />
           <AssetInput address={inputAddress} addressDisabled formValue={inputFormValue} handleSetAmount={setInput} />
         </CalculatorInputs>
@@ -270,8 +270,8 @@ export const BoostCalculator: FC<{
               onClick={() => {
                 if (inputValue) {
                   const priceCoeff = getPriceCoeff(vault)
-                  const vMTARequired = calculateVMTAForMaxBoost(inputValue, priceCoeff)
-                  setVmta(vMTARequired?.toFixed(2))
+                  const vFURYRequired = calculateVFURYForMaxBoost(inputValue, priceCoeff)
+                  setVfury(vFURYRequired?.toFixed(2))
                 }
               }}
             >
@@ -288,7 +288,7 @@ export const BoostCalculator: FC<{
             >
               <div className="gov">
                 <GovSvg />
-                Get vMTA
+                Get vFURY
               </div>
             </StyledButton>
           </BoostAndActions>

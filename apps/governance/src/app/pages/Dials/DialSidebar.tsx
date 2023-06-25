@@ -58,7 +58,7 @@ const WarningLabel = styled.p`
   font-size: 0.875rem;
 `
 
-const DOCS_URL = 'https://docs.mstable.org/using-mstable/mta-staking'
+const DOCS_URL = 'https://docs.mstable.org/using-mstable/fury-staking'
 const FORUM_URL = 'https://forum.mstable.org/'
 
 export const DialSidebar: FC = () => {
@@ -80,7 +80,7 @@ export const DialSidebar: FC = () => {
           </WarningLabel>
         </WarningContainer>
       )}
-      <BalanceWidget title="Voting Power" token="vMTA" balance={user?.votePower?.simple ?? 0} />
+      <BalanceWidget title="Voting Power" token="vFURY" balance={user?.votePower?.simple ?? 0} />
       {user?.isDelegatee && <DialDelegatee address={user.address} />}
       <InfoBox>
         <ButtonExternal

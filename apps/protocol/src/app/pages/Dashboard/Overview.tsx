@@ -10,7 +10,15 @@ import { useFraxStakingState } from '../../context/FraxStakingProvider'
 import { useRewardsEarned, useStakingRewards } from '../Save/hooks'
 import { useTotalRewards } from './RewardsContext'
 import { DashboardFilter as DF } from './types'
-import { getFraxDeposited, getFraxRewards, getPoolDeposited, getSaveDeposited, isValidFeederPool, useMTAPrice, useWBTCPrice } from './utils'
+import {
+  getFraxDeposited,
+  getFraxRewards,
+  getPoolDeposited,
+  getSaveDeposited,
+  isValidFeederPool,
+  useFURYPrice,
+  useWBTCPrice,
+} from './utils'
 
 import type { MassetState } from '@apps/data-provider'
 import type { FC } from 'react'
@@ -111,13 +119,13 @@ export const Overview: FC<{ tab: DF }> = ({ tab }) => {
   const { unlocked: _unlocked } = useTotalRewards()
   const rewardsEarned = useRewardsEarned()
   const { subscribedData: fraxSubscribedData } = useFraxStakingState()
-  const mtaPrice = useMTAPrice()
+  const furyPrice = useFURYPrice()
 
   const unlocked = (() => {
     const ethUnlocked = _unlocked
 
     const polygonUnlocked = (() => {
-      let unlocked = rewardsEarned?.rewards?.find(v => v?.token === 'MTA')?.earned?.simple
+      let unlocked = rewardsEarned?.rewards?.find(v => v?.token === 'FURY')?.earned?.simple
       const fraxUnlocked = getFraxRewards(fraxSubscribedData?.value?.accountData)
       if (tab === DF.Pools && fraxUnlocked) {
         unlocked += fraxUnlocked
@@ -138,8 +146,8 @@ export const Overview: FC<{ tab: DF }> = ({ tab }) => {
       </Item>
       <Item>
         <h3>Claimable rewards</h3>
-        <Tooltip hideIcon tip={`$${(unlocked * mtaPrice.value).toFixed(2)}`}>
-          <CountUp end={unlocked} suffix="MTA" spaced />
+        <Tooltip hideIcon tip={`$${(unlocked * furyPrice.value).toFixed(2)}`}>
+          <CountUp end={unlocked} suffix="FURY" spaced />
         </Tooltip>
       </Item>
     </Items>

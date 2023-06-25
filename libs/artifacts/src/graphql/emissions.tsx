@@ -290,7 +290,7 @@ export type EmissionsController = {
   /** The ID is the address */
   id: Scalars['ID'];
   address: Scalars['Bytes'];
-  /** Address of rewards token. i.e. MTA token */
+  /** Address of rewards token. i.e. FURY token */
   rewardToken: Token;
   /** List of staking contract addresses used to determine voting power */
   stakingContracts: Array<Scalars['Bytes']>;

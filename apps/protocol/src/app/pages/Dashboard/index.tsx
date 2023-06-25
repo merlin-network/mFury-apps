@@ -152,7 +152,7 @@ export const Dashboard: FC = () => {
           />
           <InfoButton
             title="Staking"
-            content="Stake MTA to participate in Governance and boost your rewards on Vault deposits"
+            content="Stake FURY to participate in Governance and boost your rewards on Vault deposits"
             onClick={() => handleButtonClick(1)}
           />
         </ActionCallouts>

@@ -194,13 +194,13 @@ const PoolDetailContent: FC = () => {
             </p>
             <p>
               Liquidity providers passively earn swap fees. Deposits to the Vault earn swap fees in addition to{' '}
-              {isEthereum ? `MTA rewards which vest over time.` : `token rewards.`}
+              {isEthereum ? `FURY rewards which vest over time.` : `token rewards.`}
               {isEthereum && !readMore && <UnstyledButton onClick={setReadMore}>Learn more</UnstyledButton>}
             </p>
             {readMore && (
               <>
                 <p>
-                  You can <span>multiply your rewards</span> in mStable pools by staking MTA.
+                  You can <span>multiply your rewards</span> in mStable pools by staking FURY.
                 </p>
                 <p>
                   Claiming rewards will send 33% of the unclaimed amount to you immediately, with the rest safely locked in a stream vesting

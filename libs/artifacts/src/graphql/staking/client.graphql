@@ -11,7 +11,7 @@ type StakedTokenBalance {
 
 type Account {
   totalVotesBPTBD: MstableBigDecimal!
-  totalVotesMTABD: MstableBigDecimal!
+  totalVotesFURYBD: MstableBigDecimal!
   totalVotesAllBD: MstableBigDecimal!
   permMultiplierSimple: Float!
   seasonMultiplierSimple: Float!

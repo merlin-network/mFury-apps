@@ -99,14 +99,14 @@ export const EthereumSave: FC = () => {
                   </ButtonPanel>
                 )}
                 <InfoButton
-                  title="Stake MTA"
-                  content="Stake MTA to participate in Governance and boost your rewards on Vault deposits."
+                  title="Stake FURY"
+                  content="Stake FURY to participate in Governance and boost your rewards on Vault deposits."
                   onClick={handleGovernanceClick}
                 />
                 <InfoBox highlight subtitle="Using mStable Save">
                   <p>
                     By depositing to {`i${massetConfig.formattedName}`} you will begin earning interest on your underlying{' '}
-                    {massetConfig.formattedName}. {vault ? 'Deposits to the Vault earn interest in addition to MTA rewards.' : ''}
+                    {massetConfig.formattedName}. {vault ? 'Deposits to the Vault earn interest in addition to FURY rewards.' : ''}
                   </p>
                   <p>
                     Deposits from assets other than {massetConfig.formattedName} will first mint {massetConfig.formattedName} before being

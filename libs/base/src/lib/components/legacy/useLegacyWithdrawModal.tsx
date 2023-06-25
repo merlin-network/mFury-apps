@@ -7,7 +7,7 @@ import { useModal } from 'react-modal-hook'
 import styled from 'styled-components'
 import { useAccount, useContractReads } from 'wagmi'
 
-import { legacyContracts, StakingABI, vmtaABI } from './constants'
+import { legacyContracts, StakingABI, vfuryABI } from './constants'
 import { WithdrawCard } from './WithdrawCard'
 
 import type { BigNumber } from 'ethers'
@@ -56,8 +56,8 @@ export const useLegacyWithdrawModal = (): [() => void, () => void] => {
     const { address } = useAccount()
     const contracts = legacyContracts.map(c => ({
       addressOrName: c.address,
-      contractInterface: c.poolType === 'vmta' ? vmtaABI : StakingABI,
-      functionName: c.poolType === 'vmta' ? 'staticBalanceOf' : 'balanceOf',
+      contractInterface: c.poolType === 'vfury' ? vfuryABI : StakingABI,
+      functionName: c.poolType === 'vfury' ? 'staticBalanceOf' : 'balanceOf',
       args: [address],
     }))
     const { data } = useContractReads({ contracts, allowFailure: true })

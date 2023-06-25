@@ -7,10 +7,10 @@ export const MIN_BOOST = 1
 export const MAX_BOOST = 3
 export const BOOST_COEFF = 0.9
 export const EXPONENT = 3 / 4
-export const MAX_VMTA = 600000
+export const MAX_VFURY = 600000
 
 // 0.98 + c * min(voting_weight, f) / scaledBalance^b
-export const calculateVMTAForMaxBoost = (stakingBalance: BigDecimal, priceCoeff?: number): number => {
+export const calculateVFURYForMaxBoost = (stakingBalance: BigDecimal, priceCoeff?: number): number => {
   if (!priceCoeff) return 0
 
   const scaledBalance = stakingBalance.simple * priceCoeff
@@ -18,17 +18,17 @@ export const calculateVMTAForMaxBoost = (stakingBalance: BigDecimal, priceCoeff?
   const y = scaledBalance ** EXPONENT
   const unbounded = (x * y) / BOOST_COEFF
 
-  return Math.min(unbounded, MAX_VMTA) * 12
+  return Math.min(unbounded, MAX_VFURY) * 12
 }
 
-// min(m, max(d, 0.98 + c * min(vMTA, f) / USD^b))
-export const calculateBoost = (priceCoeff?: number, stakingBalance?: BigDecimal, vMTABalance?: BigDecimal): number => {
+// min(m, max(d, 0.98 + c * min(vFURY, f) / USD^b))
+export const calculateBoost = (priceCoeff?: number, stakingBalance?: BigDecimal, vFURYBalance?: BigDecimal): number => {
   if (!priceCoeff) return 1
 
-  const scaledMTABalance = (vMTABalance?.simple ?? 0) / 12
+  const scaledFURYBalance = (vFURYBalance?.simple ?? 0) / 12
   const scaledBalance = (stakingBalance?.simple ?? 0) * priceCoeff
 
-  return Math.min(MAX_BOOST, Math.max(MIN_BOOST, 0.98 + (BOOST_COEFF * Math.min(scaledMTABalance, MAX_VMTA)) / scaledBalance ** EXPONENT))
+  return Math.min(MAX_BOOST, Math.max(MIN_BOOST, 0.98 + (BOOST_COEFF * Math.min(scaledFURYBalance, MAX_VFURY)) / scaledBalance ** EXPONENT))
 }
 
 export const getPriceCoeff = (vault: BoostedVaultState): number | undefined => {

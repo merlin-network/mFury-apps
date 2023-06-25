@@ -37,36 +37,36 @@ const useTokens = () => {
   return useMemo(() => {
     if (!massetTokens || !bassetTokens || !fassetTokens)
       return {
-        MTA: undefined,
+        FURY: undefined,
         massetTokens: [],
         bassetTokens: [],
         fassetTokens: [],
       }
 
-    const MTA =
+    const FURY =
       isMainnet &&
       ({
         name: `Meta (mStable Governance)`,
-        symbol: `MTA`,
-        address: networkAddresses.MTA,
+        symbol: `FURY`,
+        address: networkAddresses.FURY,
         decimals: 18,
       } as SubscribedToken | undefined)
 
     return {
-      MTA,
+      FURY,
       massetTokens,
       bassetTokens,
       fassetTokens,
     }
-  }, [bassetTokens, massetTokens, fassetTokens, isMainnet, networkAddresses.MTA])
+  }, [bassetTokens, massetTokens, fassetTokens, isMainnet, networkAddresses.FURY])
 }
 
 export const WalletTable: FC = () => {
-  const { MTA, massetTokens, bassetTokens, fassetTokens } = useTokens()
+  const { FURY, massetTokens, bassetTokens, fassetTokens } = useTokens()
 
   return (
     <DashTable headerTitles={headerTitles}>
-      {MTA && <WalletRow key={MTA.address} token={MTA} />}
+      {FURY && <WalletRow key={FURY.address} token={FURY} />}
       {massetTokens.map(masset => (
         <WalletRow key={masset?.address} token={masset} type="masset" />
       ))}

@@ -22,7 +22,7 @@ import { Leaderboard } from './Leaderboard'
 import type { Interfaces } from '@apps/transaction-manifest'
 import type { FC } from 'react'
 
-const DOCS_URL = 'https://docs.mstable.org/using-mstable/mta-staking/staking-v2'
+const DOCS_URL = 'https://docs.mstable.org/using-mstable/fury-staking/staking-v2'
 const SNAPSHOT_URL = 'https://snapshot.org/#/mstablegovernance.eth'
 
 const DelegationBox = styled(InfoBox)<{ isTitleAddress: boolean }>`
